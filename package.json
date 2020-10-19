@@ -1,0 +1,37 @@
+{
+  "name": "example-tools",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:anderjason/example-tools.git"
+  },
+  "author": "Jason Anderson",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "npm run clean && tsc",
+    "clean": "rm -rf dist && rm -rf test",
+    "test": "tsc -p tsconfig.test.json && node test/index.test && rm -rf test"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "dependencies": {
+    "@anderjason/color": "^2.0.0",
+    "@anderjason/geometry": "^3.0.0",
+    "@anderjason/observable": "^3.0.0",
+    "@anderjason/tests": "^1.0.1",
+    "@anderjason/util": "^2.0.3",
+    "@anderjason/web": "^4.2.0",
+    "skytree": "^9.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.3"
+  },
+  "bugs": {
+    "url": "https://github.com/anderjason/example-tools/issues"
+  },
+  "homepage": "https://github.com/anderjason/example-tools#readme"
+}
