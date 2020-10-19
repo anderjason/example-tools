@@ -13,7 +13,8 @@
   "scripts": {
     "build": "npm run clean && tsc",
     "clean": "rm -rf dist && rm -rf test",
-    "test": "tsc -p tsconfig.test.json && node test/index.test && rm -rf test"
+    "test": "tsc -p tsconfig.test.json && node test/index.test && rm -rf test",
+    "examples": "webpack-dev-server --config ./examples/webpack.config.js --open"
   },
   "files": [
     "dist/**/*"
@@ -28,7 +29,12 @@
     "skytree": "^9.1.1"
   },
   "devDependencies": {
-    "typescript": "^4.0.3"
+    "html-webpack-plugin": "^4.5.0",
+    "ts-loader": "^8.0.5",
+    "typescript": "^4.0.3",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack": "4.44.2"
   },
   "bugs": {
     "url": "https://github.com/anderjason/example-tools/issues"
