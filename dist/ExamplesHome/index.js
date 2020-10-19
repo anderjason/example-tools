@@ -31,6 +31,7 @@ class ExamplesHome extends skytree_1.Actor {
         const scrollElement = mainArea.element;
         this.addActor(new ExamplesSidebar_1.ExamplesSidebar({
             parentElement: sidebarArea.element,
+            title: this.props.title,
             definitions: this.props.definitions,
         }));
         this.addActor(new skytree_1.ArrayActivator({

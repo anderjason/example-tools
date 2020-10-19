@@ -64,6 +64,7 @@ const DescriptionStyle = web_1.ElementStyle.givenDefinition({
     grid-area: description;
 
     & > h2 {
+      color: #181818;
       margin: 0 0 20px 0;
       padding: 0;
     }

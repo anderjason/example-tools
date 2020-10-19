@@ -6,6 +6,7 @@ import { ExampleDefinition } from "../../../ExampleDefinition";
 
 export interface ExamplesSidebarProps {
   parentElement: HTMLElement;
+  title: string;
   definitions: ObservableArray<ExampleDefinition>;
 }
 
@@ -24,7 +25,7 @@ export class ExamplesSidebar extends Actor<ExamplesSidebarProps> {
         parentElement: wrapper.element,
       })
     );
-    title.element.innerHTML = "Geometry";
+    title.element.innerHTML = this.props.title;
 
     this.addActor(
       new ArrayActivator({
@@ -91,5 +92,6 @@ const TitleStyle = ElementStyle.givenDefinition({
     align-items: flex-end;
     font-size: 20px;
     line-height: 20px;
+    color: #181818;
   `,
 });

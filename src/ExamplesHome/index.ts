@@ -7,6 +7,7 @@ import { ExamplesSection } from "./_internal/ExamplesSection";
 import { ExamplesSidebar } from "./_internal/ExamplesSidebar";
 
 export interface ExamplesHomeProps {
+  title: string;
   definitions: ObservableArray<ExampleDefinition>;
 }
 
@@ -46,6 +47,7 @@ export class ExamplesHome extends Actor<ExamplesHomeProps> {
     this.addActor(
       new ExamplesSidebar({
         parentElement: sidebarArea.element,
+        title: this.props.title,
         definitions: this.props.definitions,
       })
     );

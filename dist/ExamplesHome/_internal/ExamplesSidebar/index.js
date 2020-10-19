@@ -14,7 +14,7 @@ class ExamplesSidebar extends skytree_1.Actor {
             tagName: "div",
             parentElement: wrapper.element,
         }));
-        title.element.innerHTML = "Geometry";
+        title.element.innerHTML = this.props.title;
         this.addActor(new skytree_1.ArrayActivator({
             input: this.props.definitions,
             fn: (definition) => {
@@ -75,6 +75,7 @@ const TitleStyle = web_1.ElementStyle.givenDefinition({
     align-items: flex-end;
     font-size: 20px;
     line-height: 20px;
+    color: #181818;
   `,
 });
 //# sourceMappingURL=index.js.map
