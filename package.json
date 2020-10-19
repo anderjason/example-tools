@@ -21,11 +21,11 @@
   "dependencies": {
     "@anderjason/color": "^2.0.0",
     "@anderjason/geometry": "^3.0.0",
-    "@anderjason/observable": "^3.0.0",
+    "@anderjason/observable": "^3.0.1",
     "@anderjason/tests": "^1.0.1",
     "@anderjason/util": "^2.0.3",
     "@anderjason/web": "^4.2.0",
-    "skytree": "^9.1.0"
+    "skytree": "^9.1.1"
   },
   "devDependencies": {
     "typescript": "^4.0.3"
