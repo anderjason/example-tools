@@ -122,6 +122,7 @@ const DemoAreaStyle = ElementStyle.givenDefinition({
     background: #17161E;
     border-radius: 12px;
     position: relative;
+    overflow: hidden;
 
     & > * {
       border-radius: 12px;
