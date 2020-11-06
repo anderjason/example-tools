@@ -12,25 +12,30 @@ class ExamplesHome extends skytree_1.Actor {
             tagName: "div",
             parentElement: document.body,
         }));
-        const sidebarArea = this.addActor(new web_1.ScrollArea({
+        const sidebarArea = this.addActor(SidebarAreaStyle.toManagedElement({
+            tagName: "div",
             parentElement: mainArea.element,
+        }));
+        const sidebarScroll = this.addActor(new web_1.ScrollArea({
+            parentElement: sidebarArea.element,
             direction: "vertical",
             scrollPositionColor: color_1.Color.givenHexString("#444444"),
             backgroundColor: color_1.Color.givenHexString("#fafafa"),
         }));
-        sidebarArea.element.style.gridArea = "sidebar";
-        sidebarArea.element.style.borderRight = "1px solid rgba(0, 0, 0, 0.05)";
-        const contentArea = this.addActor(new web_1.ScrollArea({
+        const contentArea = this.addActor(ContentAreaStyle.toManagedElement({
+            tagName: "div",
             parentElement: mainArea.element,
+        }));
+        const contentScroll = this.addActor(new web_1.ScrollArea({
+            parentElement: contentArea.element,
             direction: "vertical",
             scrollPositionColor: color_1.Color.givenHexString("#DDDDDD"),
             backgroundColor: color_1.Color.givenHexString("#181818"),
         }));
-        contentArea.element.style.gridArea = "content";
-        const parentElement = contentArea.element;
-        const scrollElement = mainArea.element;
+        const parentElement = contentScroll.element;
+        const scrollElement = contentScroll.element;
         this.addActor(new ExamplesSidebar_1.ExamplesSidebar({
-            parentElement: sidebarArea.element,
+            parentElement: sidebarScroll.element,
             title: this.props.title,
             definitions: this.props.definitions,
         }));
@@ -55,15 +60,30 @@ const WrapperStyle = web_1.ElementStyle.givenDefinition({
     top: 0;
     right: 0;
     bottom: 0;
-    display: grid;
+    display: flex;
     background: #FFF;
-    grid-template-columns: 250px 1fr;
-    grid-template-areas:
-      "sidebar content";
 
     @media screen and (max-width: 600px) {
       display: block;
     }
+  `,
+});
+const SidebarAreaStyle = web_1.ElementStyle.givenDefinition({
+    css: `
+    width: 250px;
+    position: relative;
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+    flex-shrink: 0;
+
+    @media screen and (max-width: 600px) {
+      width: 100%;
+    }
+  `,
+});
+const ContentAreaStyle = web_1.ElementStyle.givenDefinition({
+    css: `
+    flex-grow: 1;
+    position: relative;
   `,
 });
 //# sourceMappingURL=index.js.map
