@@ -12,7 +12,7 @@ export class FirstExampleDemo
   readonly isVisible = Observable.ofEmpty<boolean>();
 
   onActivate() {
-    const wrapper = this.addActor(
+    this.addActor(
       WrapperStyle.toManagedElement({
         tagName: "div",
         parentElement: this.parentElement,
@@ -22,6 +22,7 @@ export class FirstExampleDemo
 }
 
 const WrapperStyle = ElementStyle.givenDefinition({
+  elementDescription: "FirstExampleDemo",
   css: `
     width: 100%;
     height: 100%;

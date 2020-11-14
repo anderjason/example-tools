@@ -49,6 +49,7 @@ export class ExamplesSidebar extends Actor<ExamplesSidebarProps> {
 }
 
 const WrapperStyle = ElementStyle.givenDefinition({
+  elementDescription: "ExamplesSidebar",
   css: `
     padding: 0 0 0 20px;
 
@@ -66,6 +67,7 @@ const WrapperStyle = ElementStyle.givenDefinition({
 });
 
 const LinkStyle = ElementStyle.givenDefinition({
+  elementDescription: "Link",
   css: `
     cursor: pointer;
     display: block;
@@ -82,6 +84,7 @@ const LinkStyle = ElementStyle.givenDefinition({
 });
 
 const TitleStyle = ElementStyle.givenDefinition({
+  elementDescription: "Title",
   css: `
     font-weight: bold;
     height: 80px;

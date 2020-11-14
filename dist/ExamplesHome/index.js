@@ -54,6 +54,7 @@ class ExamplesHome extends skytree_1.Actor {
 }
 exports.ExamplesHome = ExamplesHome;
 const WrapperStyle = web_1.ElementStyle.givenDefinition({
+    elementDescription: "ExamplesHome",
     css: `
     position: absolute;
     left: 0;
@@ -69,6 +70,7 @@ const WrapperStyle = web_1.ElementStyle.givenDefinition({
   `,
 });
 const SidebarAreaStyle = web_1.ElementStyle.givenDefinition({
+    elementDescription: "SidebarArea",
     css: `
     width: 250px;
     position: relative;
@@ -81,6 +83,7 @@ const SidebarAreaStyle = web_1.ElementStyle.givenDefinition({
   `,
 });
 const ContentAreaStyle = web_1.ElementStyle.givenDefinition({
+    elementDescription: "ContentArea",
     css: `
     flex-grow: 1;
     position: relative;

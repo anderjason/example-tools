@@ -43,6 +43,7 @@ class ExamplesSection extends skytree_1.Actor {
 }
 exports.ExamplesSection = ExamplesSection;
 const WrapperStyle = web_1.ElementStyle.givenDefinition({
+    elementDescription: "ExamplesSection",
     css: `
     min-height: 400px;
     display: grid;
@@ -57,6 +58,7 @@ const WrapperStyle = web_1.ElementStyle.givenDefinition({
   `,
 });
 const DescriptionStyle = web_1.ElementStyle.givenDefinition({
+    elementDescription: "Description",
     css: `
     border-bottom: 1px solid rgba(180, 180, 180, 0.2);
     background: #FFF;
@@ -79,6 +81,7 @@ const DescriptionStyle = web_1.ElementStyle.givenDefinition({
   `,
 });
 const CodeStyle = web_1.ElementStyle.givenDefinition({
+    elementDescription: "Code",
     css: `
     border-bottom: 1px solid rgba(255,255,255,0.1);
     background: #181818;
@@ -87,6 +90,7 @@ const CodeStyle = web_1.ElementStyle.givenDefinition({
   `,
 });
 const DemoAreaStyle = web_1.ElementStyle.givenDefinition({
+    elementDescription: "DemoArea",
     css: `
     width: 600px;
     height: 500px;

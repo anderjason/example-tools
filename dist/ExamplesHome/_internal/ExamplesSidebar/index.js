@@ -34,6 +34,7 @@ class ExamplesSidebar extends skytree_1.Actor {
 }
 exports.ExamplesSidebar = ExamplesSidebar;
 const WrapperStyle = web_1.ElementStyle.givenDefinition({
+    elementDescription: "ExamplesSidebar",
     css: `
     padding: 0 0 0 20px;
 
@@ -50,6 +51,7 @@ const WrapperStyle = web_1.ElementStyle.givenDefinition({
   `,
 });
 const LinkStyle = web_1.ElementStyle.givenDefinition({
+    elementDescription: "Link",
     css: `
     cursor: pointer;
     display: block;
@@ -65,6 +67,7 @@ const LinkStyle = web_1.ElementStyle.givenDefinition({
   `,
 });
 const TitleStyle = web_1.ElementStyle.givenDefinition({
+    elementDescription: "Title",
     css: `
     font-weight: bold;
     height: 80px;

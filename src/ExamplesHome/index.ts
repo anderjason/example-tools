@@ -80,6 +80,7 @@ export class ExamplesHome extends Actor<ExamplesHomeProps> {
 }
 
 const WrapperStyle = ElementStyle.givenDefinition({
+  elementDescription: "ExamplesHome",
   css: `
     position: absolute;
     left: 0;
@@ -96,6 +97,7 @@ const WrapperStyle = ElementStyle.givenDefinition({
 });
 
 const SidebarAreaStyle = ElementStyle.givenDefinition({
+  elementDescription: "SidebarArea",
   css: `
     width: 250px;
     position: relative;
@@ -109,6 +111,7 @@ const SidebarAreaStyle = ElementStyle.givenDefinition({
 });
 
 const ContentAreaStyle = ElementStyle.givenDefinition({
+  elementDescription: "ContentArea",
   css: `
     flex-grow: 1;
     position: relative;
