@@ -80,7 +80,7 @@ export class ExamplesHome extends Actor<ExamplesHomeProps> {
 }
 
 const WrapperStyle = ElementStyle.givenDefinition({
-  elementDescription: "ExamplesHome",
+  elementDescription: "ExamplesHomeWrapper",
   css: `
     position: absolute;
     left: 0;

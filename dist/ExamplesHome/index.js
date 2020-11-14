@@ -54,7 +54,7 @@ class ExamplesHome extends skytree_1.Actor {
 }
 exports.ExamplesHome = ExamplesHome;
 const WrapperStyle = web_1.ElementStyle.givenDefinition({
-    elementDescription: "ExamplesHome",
+    elementDescription: "ExamplesHomeWrapper",
     css: `
     position: absolute;
     left: 0;
