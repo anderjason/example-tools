@@ -1,9 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ExamplesSection = void 0;
-const skytree_1 = require("skytree");
-const web_1 = require("@anderjason/web");
 const util_1 = require("@anderjason/util");
+const web_1 = require("@anderjason/web");
+const hljs = require("highlight.js");
+const skytree_1 = require("skytree");
 class ExamplesSection extends skytree_1.Actor {
     onActivate() {
         const wrapper = this.addActor(WrapperStyle.toManagedElement({
@@ -14,7 +15,7 @@ class ExamplesSection extends skytree_1.Actor {
             tagName: "div",
             parentElement: wrapper.element,
         }));
-        const code = this.addActor(CodeStyle.toManagedElement({
+        const codeArea = this.addActor(CodeAreaStyle.toManagedElement({
             tagName: "div",
             parentElement: wrapper.element,
         }));
@@ -42,6 +43,14 @@ class ExamplesSection extends skytree_1.Actor {
         this.cancelOnDeactivate(intersectionWatcher.isElementVisible.didChange.subscribe((isVisible) => {
             demoContent.setModifier("isVisible", isVisible);
             this.props.demoActor.isVisible.setValue(isVisible);
+        }, true));
+        this.cancelOnDeactivate(this.props.demoActor.exampleCode.didChange.subscribe((code) => {
+            if (code == null) {
+                codeArea.element.innerHTML = "";
+                return;
+            }
+            const highlighted = hljs.highlight(code.language, code.code);
+            codeArea.element.innerHTML = highlighted.value;
         }, true));
     }
 }
@@ -84,13 +93,162 @@ const DescriptionStyle = web_1.ElementStyle.givenDefinition({
     }
   `,
 });
-const CodeStyle = web_1.ElementStyle.givenDefinition({
+const CodeAreaStyle = web_1.ElementStyle.givenDefinition({
     elementDescription: "Code",
     css: `
     border-bottom: 1px solid rgba(255,255,255,0.1);
     background: #181818;
-    padding: 80px 40px;
+    padding: 140px 40px 80px 40px;
     grid-area: code;
+    white-space: pre-wrap;
+    font-family: Menlo, monospace;
+    font-size: 13.5px;
+    line-height: 1.3;
+    color: #FAFAFA;
+
+    .hljs {
+      display: block;
+      overflow-x: auto;
+      padding: 0.5em;
+      background: #011627;
+      color: #d6deeb;
+    }
+    
+    /* General Purpose */
+    .hljs-keyword {
+      color: #c792ea;
+    }
+    .hljs-built_in {
+      color: #addb67;
+    }
+    .hljs-type {
+      color: #82aaff;
+    }
+    .hljs-literal {
+      color: #ff5874;
+    }
+    .hljs-number {
+      color: #F78C6C;
+    }
+    .hljs-regexp {
+      color: #5ca7e4;
+    }
+    .hljs-string {
+      color: #ecc48d;
+    }
+    .hljs-subst {
+      color: #d3423e;
+    }
+    .hljs-symbol {
+      color: #82aaff;
+    }
+    .hljs-class {
+      color: #ffcb8b;
+    }
+    .hljs-function {
+      color: #82AAFF;
+    }
+    .hljs-title {
+      color: #DCDCAA;
+    }
+    .hljs-params {
+      color: #7fdbca;
+    }
+    
+    /* Meta */
+    .hljs-comment {
+      color: #637777;
+    }
+    .hljs-doctag {
+      color: #7fdbca;
+    }
+    .hljs-meta {
+      color: #82aaff;
+    }
+    .hljs-meta-keyword {
+      color: #82aaff;
+    }
+    .hljs-meta-string {
+      color: #ecc48d;
+    }
+    
+    /* Tags, attributes, config */
+    .hljs-section {
+      color: #82b1ff;
+    }
+    .hljs-tag,
+    .hljs-name,
+    .hljs-builtin-name {
+      color: #7fdbca;
+    }
+    .hljs-attr {
+      color: #7fdbca;
+    }
+    .hljs-attribute {
+      color: #80cbc4;
+    }
+    .hljs-variable {
+      color: #addb67;
+    }
+    
+    /* Markup */
+    .hljs-bullet {
+      color: #d9f5dd;
+    }
+    .hljs-code {
+      color: #80CBC4;
+    }
+    .hljs-emphasis {
+      color: #c792ea;
+    }
+    .hljs-strong {
+      color: #addb67;
+      font-weight: bold;
+    }
+    .hljs-formula {
+      color: #c792ea;
+    }
+    .hljs-link {
+      color: #ff869a;
+    }
+    .hljs-quote {
+      color: #697098;
+    }
+    
+    /* CSS */
+    .hljs-selector-tag {
+      color: #ff6363;
+    }
+    
+    .hljs-selector-id {
+      color: #fad430;
+    }
+    
+    .hljs-selector-class {
+      color: #addb67;
+    }
+    
+    .hljs-selector-attr,
+    .hljs-selector-pseudo {
+      color: #c792ea;
+    }
+    
+    /* Templates */
+    .hljs-template-tag {
+      color: #c792ea;
+    }
+    .hljs-template-variable {
+      color: #addb67;
+    }
+    
+    /* diff */
+    .hljs-addition {
+      color: #addb67ff;
+    }
+    
+    .hljs-deletion {
+      color: #EF535090;
+    }
   `,
 });
 const DemoAreaStyle = web_1.ElementStyle.givenDefinition({

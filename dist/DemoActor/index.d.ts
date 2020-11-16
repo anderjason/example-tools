@@ -1,6 +1,8 @@
 import { Observable } from "@anderjason/observable";
 import { Actor } from "skytree";
-export interface DemoActor extends Actor {
-    parentElement: Observable<HTMLElement>;
-    isVisible: Observable<boolean>;
+import { ExampleCode } from "../ExamplesHome/_internal/ExamplesSection";
+export declare abstract class DemoActor<T> extends Actor<T> {
+    readonly parentElement: Observable<HTMLElement>;
+    readonly isVisible: Observable<boolean>;
+    readonly exampleCode: Observable<ExampleCode>;
 }
