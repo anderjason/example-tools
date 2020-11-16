@@ -48,6 +48,13 @@ export class ExamplesSection extends Actor<ExamplesSectionProps> {
       })
     );
 
+    const demoContent = this.addActor(
+      DemoContentStyle.toManagedElement({
+        tagName: "div",
+        parentElement: demoArea.element,
+      })
+    );
+
     const intersectionWatcher = this.addActor(
       new IntersectionWatcher({
         element: demoArea.element,
@@ -61,7 +68,7 @@ export class ExamplesSection extends Actor<ExamplesSectionProps> {
 
     this.cancelOnDeactivate(
       intersectionWatcher.isElementVisible.didChange.subscribe((isVisible) => {
-        demoArea.setModifier("isVisible", isVisible);
+        demoContent.setModifier("isVisible", isVisible);
         this.props.demoActor.isVisible.setValue(isVisible);
       }, true)
     );
@@ -128,29 +135,24 @@ const DemoAreaStyle = ElementStyle.givenDefinition({
     position: relative;
     overflow: hidden;
 
-    & > * {
-      border-radius: 12px;
-      opacity: 0.4;
-      transition: 0.3s ease opacity;
-    }
-
     @media screen and (max-width: 600px) {
       width: calc(100% + 30px);
       border-radius: 0;
       height: 300px;
       margin-left: -15px;
       margin-right: -15px;
-
-      & > * {
-        border-radius: 0;
-      }
     }
+  `,
+});
+
+const DemoContentStyle = ElementStyle.givenDefinition({
+  css: `
+    opacity: 0.4;
+    transition: 0.3s ease opacity;
   `,
   modifiers: {
     isVisible: `
-      & > * {
-        opacity: 1;
-      }
+      opacity: 1;
     `,
   },
 });

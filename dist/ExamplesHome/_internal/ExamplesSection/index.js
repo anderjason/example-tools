@@ -28,6 +28,10 @@ class ExamplesSection extends skytree_1.Actor {
             tagName: "div",
             parentElement: description.element,
         }));
+        const demoContent = this.addActor(DemoContentStyle.toManagedElement({
+            tagName: "div",
+            parentElement: demoArea.element,
+        }));
         const intersectionWatcher = this.addActor(new web_1.IntersectionWatcher({
             element: demoArea.element,
             scrollElement: this.props.scrollElement,
@@ -36,7 +40,7 @@ class ExamplesSection extends skytree_1.Actor {
         this.props.demoActor.parentElement.setValue(demoArea.element);
         this.addActor(this.props.demoActor);
         this.cancelOnDeactivate(intersectionWatcher.isElementVisible.didChange.subscribe((isVisible) => {
-            demoArea.setModifier("isVisible", isVisible);
+            demoContent.setModifier("isVisible", isVisible);
             this.props.demoActor.isVisible.setValue(isVisible);
         }, true));
     }
@@ -99,29 +103,23 @@ const DemoAreaStyle = web_1.ElementStyle.givenDefinition({
     position: relative;
     overflow: hidden;
 
-    & > * {
-      border-radius: 12px;
-      opacity: 0.4;
-      transition: 0.3s ease opacity;
-    }
-
     @media screen and (max-width: 600px) {
       width: calc(100% + 30px);
       border-radius: 0;
       height: 300px;
       margin-left: -15px;
       margin-right: -15px;
-
-      & > * {
-        border-radius: 0;
-      }
     }
+  `,
+});
+const DemoContentStyle = web_1.ElementStyle.givenDefinition({
+    css: `
+    opacity: 0.4;
+    transition: 0.3s ease opacity;
   `,
     modifiers: {
         isVisible: `
-      & > * {
-        opacity: 1;
-      }
+      opacity: 1;
     `,
     },
 });
