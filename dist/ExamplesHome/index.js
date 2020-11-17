@@ -72,7 +72,7 @@ const WrapperStyle = web_1.ElementStyle.givenDefinition({
 const SidebarAreaStyle = web_1.ElementStyle.givenDefinition({
     elementDescription: "SidebarArea",
     css: `
-    width: 250px;
+    width: 300px;
     position: relative;
     border-right: 1px solid rgba(0, 0, 0, 0.05);
     flex-shrink: 0;
