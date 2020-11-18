@@ -97,14 +97,14 @@ const CodeAreaStyle = web_1.ElementStyle.givenDefinition({
     elementDescription: "Code",
     css: `
     border-bottom: 1px solid rgba(255,255,255,0.1);
-    background: #181818;
+    background: #1E1E1E;
     padding: 140px 40px 80px 40px;
     grid-area: code;
     white-space: pre-wrap;
     font-family: Menlo, monospace;
     font-size: 13px;
     line-height: 1.4;
-    color: #ECECEC;
+    color: #EBEBEB;
 
     .hljs {
       display: block;
