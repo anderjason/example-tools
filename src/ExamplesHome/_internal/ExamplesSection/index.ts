@@ -143,8 +143,8 @@ const CodeAreaStyle = ElementStyle.givenDefinition({
     white-space: pre-wrap;
     font-family: Menlo, monospace;
     font-size: 13.5px;
-    line-height: 1.3;
-    color: #FAFAFA;
+    line-height: 1.4;
+    color: #DCDCDC;
 
     .hljs {
       display: block;
@@ -156,10 +156,10 @@ const CodeAreaStyle = ElementStyle.givenDefinition({
     
     /* General Purpose */
     .hljs-keyword {
-      color: #c792ea;
+      color: #C586C0;
     }
     .hljs-built_in {
-      color: #addb67;
+      color: #5396CE;
     }
     .hljs-type {
       color: #82aaff;
@@ -174,7 +174,7 @@ const CodeAreaStyle = ElementStyle.givenDefinition({
       color: #5ca7e4;
     }
     .hljs-string {
-      color: #ecc48d;
+      color: #CE9178;
     }
     .hljs-subst {
       color: #d3423e;
@@ -189,10 +189,10 @@ const CodeAreaStyle = ElementStyle.givenDefinition({
       color: #82AAFF;
     }
     .hljs-title {
-      color: #DCDCAA;
+      color: #4EC9B0;
     }
     .hljs-params {
-      color: #7fdbca;
+      color: #dadada;
     }
     
     /* Meta */
@@ -222,7 +222,7 @@ const CodeAreaStyle = ElementStyle.givenDefinition({
       color: #7fdbca;
     }
     .hljs-attr {
-      color: #7fdbca;
+      color: #9CDCFE;
     }
     .hljs-attribute {
       color: #80cbc4;
