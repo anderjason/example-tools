@@ -106,6 +106,10 @@ const CodeAreaStyle = web_1.ElementStyle.givenDefinition({
     line-height: 1.4;
     color: #EBEBEB;
 
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
+
     .hljs {
       display: block;
       overflow-x: auto;
