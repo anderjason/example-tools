@@ -20,7 +20,6 @@ class ExamplesHome extends skytree_1.Actor {
             parentElement: sidebarArea.element,
             direction: "vertical",
             scrollPositionColor: color_1.Color.givenHexString("#444444"),
-            backgroundColor: color_1.Color.givenHexString("#fafafa"),
         }));
         const contentArea = this.addActor(ContentAreaStyle.toManagedElement({
             tagName: "div",
@@ -29,8 +28,7 @@ class ExamplesHome extends skytree_1.Actor {
         const contentScroll = this.addActor(new web_1.ScrollArea({
             parentElement: contentArea.element,
             direction: "vertical",
-            scrollPositionColor: color_1.Color.givenHexString("#DDDDDD"),
-            backgroundColor: color_1.Color.givenHexString("#181818"),
+            scrollPositionColor: color_1.Color.givenHexString("#FF0000"),
         }));
         const parentElement = contentScroll.element;
         const scrollElement = contentScroll.element;
@@ -63,10 +61,6 @@ const WrapperStyle = web_1.ElementStyle.givenDefinition({
     bottom: 0;
     display: flex;
     background: #FFF;
-
-    @media screen and (max-width: 600px) {
-      display: block;
-    }
   `,
 });
 const SidebarAreaStyle = web_1.ElementStyle.givenDefinition({
@@ -78,7 +72,7 @@ const SidebarAreaStyle = web_1.ElementStyle.givenDefinition({
     flex-shrink: 0;
 
     @media screen and (max-width: 600px) {
-      width: 100%;
+      position: absolute;
     }
   `,
 });
