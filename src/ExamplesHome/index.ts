@@ -46,7 +46,7 @@ export class ExamplesHome extends Actor<ExamplesHomeProps> {
       new ScrollArea({
         parentElement: contentArea.element,
         direction: "vertical",
-        scrollPositionColor: Color.givenHexString("#FF0000"),
+        scrollPositionColor: Color.givenHexString("#FFFFFF"),
       })
     );
 

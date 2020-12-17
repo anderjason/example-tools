@@ -28,7 +28,7 @@ class ExamplesHome extends skytree_1.Actor {
         const contentScroll = this.addActor(new web_1.ScrollArea({
             parentElement: contentArea.element,
             direction: "vertical",
-            scrollPositionColor: color_1.Color.givenHexString("#FF0000"),
+            scrollPositionColor: color_1.Color.givenHexString("#FFFFFF"),
         }));
         const parentElement = contentScroll.element;
         const scrollElement = contentScroll.element;
