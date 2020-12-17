@@ -25,9 +25,9 @@
     "@anderjason/observable": "^3.2.0",
     "@anderjason/tests": "^1.0.1",
     "@anderjason/util": "^2.0.3",
-    "@anderjason/web": "^6.2.3",
-    "highlight.js": "^10.3.2",
-    "skytree": "^9.3.0"
+    "@anderjason/web": "^7.0.5",
+    "highlight.js": "^10.4.1",
+    "skytree": "^9.3.1"
   },
   "devDependencies": {
     "@types/highlight.js": "^10.1.0",

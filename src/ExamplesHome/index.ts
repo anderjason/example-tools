@@ -32,7 +32,6 @@ export class ExamplesHome extends Actor<ExamplesHomeProps> {
         parentElement: sidebarArea.element,
         direction: "vertical",
         scrollPositionColor: Color.givenHexString("#444444"),
-        backgroundColor: Color.givenHexString("#fafafa"),
       })
     );
 
@@ -47,8 +46,7 @@ export class ExamplesHome extends Actor<ExamplesHomeProps> {
       new ScrollArea({
         parentElement: contentArea.element,
         direction: "vertical",
-        scrollPositionColor: Color.givenHexString("#DDDDDD"),
-        backgroundColor: Color.givenHexString("#181818"),
+        scrollPositionColor: Color.givenHexString("#FF0000"),
       })
     );
 
@@ -89,10 +87,6 @@ const WrapperStyle = ElementStyle.givenDefinition({
     bottom: 0;
     display: flex;
     background: #FFF;
-
-    @media screen and (max-width: 600px) {
-      display: block;
-    }
   `,
 });
 
@@ -105,7 +99,7 @@ const SidebarAreaStyle = ElementStyle.givenDefinition({
     flex-shrink: 0;
 
     @media screen and (max-width: 600px) {
-      width: 100%;
+      position: absolute;
     }
   `,
 });
