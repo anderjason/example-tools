@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ExamplesSection = void 0;
 const util_1 = require("@anderjason/util");
 const web_1 = require("@anderjason/web");
-const hljs = require("highlight.js");
+const highlight_js_1 = require("highlight.js");
 const skytree_1 = require("skytree");
 class ExamplesSection extends skytree_1.Actor {
     onActivate() {
@@ -49,7 +49,7 @@ class ExamplesSection extends skytree_1.Actor {
                 codeArea.element.innerHTML = "";
                 return;
             }
-            const highlighted = hljs.highlight(code.language, code.code);
+            const highlighted = highlight_js_1.default.highlight(code.language, code.code);
             codeArea.element.innerHTML = highlighted.value;
         }, true));
     }

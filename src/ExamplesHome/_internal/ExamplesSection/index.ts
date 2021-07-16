@@ -1,6 +1,6 @@
 import { Percent, StringUtil } from "@anderjason/util";
 import { ElementStyle, IntersectionWatcher } from "@anderjason/web";
-import * as hljs from "highlight.js";
+import hljs from "highlight.js";
 import { Actor } from "skytree";
 import { DemoActor } from "../../../DemoActor";
 
